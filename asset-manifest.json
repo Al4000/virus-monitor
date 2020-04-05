@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Al4000/virus-monitor/static/css/main.0e74077f.chunk.css",
+    "main.js": "/Al4000/virus-monitor/static/js/main.8bdc98fa.chunk.js",
+    "main.js.map": "/Al4000/virus-monitor/static/js/main.8bdc98fa.chunk.js.map",
+    "runtime-main.js": "/Al4000/virus-monitor/static/js/runtime-main.a8357b59.js",
+    "runtime-main.js.map": "/Al4000/virus-monitor/static/js/runtime-main.a8357b59.js.map",
+    "static/js/2.70236c1e.chunk.js": "/Al4000/virus-monitor/static/js/2.70236c1e.chunk.js",
+    "static/js/2.70236c1e.chunk.js.map": "/Al4000/virus-monitor/static/js/2.70236c1e.chunk.js.map",
+    "index.html": "/Al4000/virus-monitor/index.html",
+    "precache-manifest.d4ddcdd32adcbb5176b198210deb514f.js": "/Al4000/virus-monitor/precache-manifest.d4ddcdd32adcbb5176b198210deb514f.js",
+    "service-worker.js": "/Al4000/virus-monitor/service-worker.js",
+    "static/css/main.0e74077f.chunk.css.map": "/Al4000/virus-monitor/static/css/main.0e74077f.chunk.css.map",
+    "static/js/2.70236c1e.chunk.js.LICENSE.txt": "/Al4000/virus-monitor/static/js/2.70236c1e.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Al4000/virus-monitor/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8357b59.js",
+    "static/js/2.70236c1e.chunk.js",
+    "static/css/main.0e74077f.chunk.css",
+    "static/js/main.8bdc98fa.chunk.js"
+  ]
+}
