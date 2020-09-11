@@ -1,8 +1,9 @@
 import React from 'react';
-import List from './List'
+import Image from './Image'
 import logo from './logo.svg'
 import './App.css';
 import World from "./World";
+import Russia from "./Russia";
 
 function App() {
   return (
@@ -12,8 +13,11 @@ function App() {
           <h4>Coronavirus Monitor</h4>
           <h6>for Polytologs & Virusologs</h6>
       </header>
-      <World />
-      <List />
+      <div className="wrap">
+        <World />
+        <Russia />
+      </div>
+      <Image />
     </div>
   );
 }

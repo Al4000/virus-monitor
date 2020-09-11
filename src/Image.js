@@ -4,7 +4,7 @@ export default class List extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state ={ data: {}, isFetching: true, error: null };
+        this.state = { data: {}, isFetching: true, error: null };
     }
 
     componentDidMount() {
@@ -22,17 +22,22 @@ export default class List extends React.Component {
                 this.setState({data: imageUrl, isFetching: false })
             })
 
-        // .catch(e => {
-        //     console.log(e);
-        //     this.setState({data: '', isFetching: false, error: e }));
-        // })
+            .catch(e => {
+                console.log(e);
+                this.setState({data: '', isFetching: false, error: e })
+            })
     }
 
     render() {
         const { data, isFetching, error } = this.state;
 
-        if (isFetching) return <div>...Loading</div>;
+        if (isFetching) {
+            return <div className="list">...Loading</div>
+        }
 
+        if (error) {
+            return <div>{`Error: ${error.message}`}</div>
+        }
 
         return  (
             <img src={data} alt="" className="list__img"/>

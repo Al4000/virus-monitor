@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class World extends React.Component {
+export default class Russia extends React.Component {
     constructor(props) {
         super(props);
 
@@ -8,7 +8,7 @@ export default class World extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
+        fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=Russia", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
@@ -17,7 +17,7 @@ export default class World extends React.Component {
         })
             .then(response => response.json())
             .then(result => {
-                this.setState({data: result, isFetching: false })
+                this.setState({data: result.latest_stat_by_country[0], isFetching: false })
             })
 
             .catch(e => {
@@ -37,37 +37,12 @@ export default class World extends React.Component {
             return <div>{`Error: ${error.message}`}</div>
         }
 
-        function formatDay(i) {
-            if (i < 10)  {
-                i = "0" + i;
-            }
-            return i;
-        }
-
-        function formatMonth(i) {
-            i++;
-            if (i < 10)  {
-                i = "0" + i;
-            }
-            return i;
-        }
-
-        const date = new Date();
-        const day = formatDay(date.getDate());
-        const month = formatMonth(date.getMonth());
-        const year = date.getFullYear();
-        const hours = formatDay(date.getHours());
-        const minutes = formatDay(date.getMinutes());
-
+        const maxDate = data.record_date.slice(0, 10);
         return (
             <div className="col">
                 <ul className="list">
                     <li>
-                        <h2>World</h2>
-                    </li>
-                    <li>
-                        {/*<p>Статистика на:</p><h2>{data.statistic_taken_at} (MSK +3 часа)</h2>*/}
-                        <p>Статистика на:</p><h2>{day}-{month}-{year} {hours}:{minutes}</h2>
+                        <h2>{data.country_name}</h2>
                     </li>
                     <li>
                         <p>Новых случаев:</p><h2>{data.new_cases}</h2>
@@ -83,6 +58,12 @@ export default class World extends React.Component {
                     </li>
                     <li>
                         <p>Всего выздоровело:</p><h2>{data.total_recovered}</h2>
+                    </li>
+                    <li>
+                        <p>Заражений в минуту:</p><h2>{data.total_cases_per1m}</h2>
+                    </li>
+                    <li>
+                        <p>Максимально за день:</p><h2>{maxDate}</h2>
                     </li>
                 </ul>
             </div>
